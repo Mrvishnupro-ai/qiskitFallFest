@@ -65,19 +65,21 @@ const Sponsors = () => {
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.1 }}
                     >
-                      <Card className="glass-card border border-white/10 h-full">
-                        <CardContent className="p-6 text-center">
-                          <div className="h-16 flex items-center justify-center mb-4 bg-white rounded-lg">
-                            <span className="font-bold text-primary">
-                              <img src={sponsor.logo} alt="" />
-                            </span>
-                          </div>
-                          <h3 className="font-semibold mb-2">{sponsor.name}</h3>
-                          <p className="text-muted-foreground text-sm">
-                            {sponsor.description}
-                          </p>
-                        </CardContent>
-                      </Card>
+                      <a href={sponsor.website} target="_blank" rel="noopener noreferrer" className="block">
+                        <Card className="glass-card border border-white/10 h-full hover:border-primary/50 transition-colors">
+                          <CardContent className="p-6 text-center">
+                            <div className="h-16 flex items-center justify-center mb-4 bg-white rounded-lg">
+                              <span className="font-bold text-primary">
+                                <img src={sponsor.logo} alt="" />
+                              </span>
+                            </div>
+                            <h3 className="font-semibold mb-2">{sponsor.name}</h3>
+                            <p className="text-muted-foreground text-sm">
+                              {sponsor.description}
+                            </p>
+                          </CardContent>
+                        </Card>
+                      </a>
                     </motion.div>
                   ))}
                 </div>

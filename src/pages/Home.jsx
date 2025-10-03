@@ -13,6 +13,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import LoadingSpinner from "@/components/LoadingSpinner";
+import CountdownTimer from "@/components/CountdownTimer";
 import Cat_01 from "../../Graphics/Emojis/Cat_01.png";
 import centuryImg from "../../Graphics/Emojis/Text_Theme_01.png";
 
@@ -108,11 +109,26 @@ const Home = () => {
                   RGUKT Srikakulam, India
                 </span>
               </h1>
-              <h1 className="text-1xl sm:text-2xl lg:text-3xl font-bold font-poppins mb-6">
+              <h1 className="text-1xl sm:text-2xl lg:text-3xl font-bold font-poppins mb-4">
                 <span className="block text-foreground">
                   21<sup>st</sup> - 27<sup>th</sup> October 2025
                 </span>
               </h1>
+
+              {/* Countdown Timer */}
+              <div className="mb-8">
+                <motion.h2 
+                  className="text-lg text-muted-foreground mb-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <span className="inline-block bg-gradient-to-r from-primary/30 to-secondary/30 text-primary px-4 py-1.5 rounded-full font-semibold shadow-sm">
+                    Event Starts In
+                  </span>
+                </motion.h2>
+                <CountdownTimer targetDate="2025-10-21T00:00:00" />
+              </div>
 
               {/* Tagline */}
               <p className="text-xl sm:text-2xl text-muted-foreground mb-8 leading-relaxed">
@@ -125,10 +141,11 @@ const Home = () => {
                   <Link to="/register">
                     <Button
                       size="lg"
-                      className=" text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg"
+                      className="btn-quantum text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg shadow-lg relative group animate-pulse-glow"
                     >
-                      Register Now
-                      <ArrowRight className="ml-2 h-5 w-5" />
+                      <span className="relative z-10">Register Now</span>
+                      <ArrowRight className="ml-2 h-5 w-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+                      <span className="absolute inset-0 bg-white/10 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity"></span>
                     </Button>
                   </Link>
                 )}
@@ -136,9 +153,10 @@ const Home = () => {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="px-8 py-4 text-lg bg-highlight text-white font-semibold border-white/20 hover:bg-highlight-dark hover:text-primary rounded-lg"
+                    className="px-8 py-4 text-lg font-semibold rounded-lg glass-card border border-white/20 hover:border-primary/50 shadow-lg relative group"
                   >
-                    View Schedule
+                    <span className="relative z-10 bg-gradient-to-r from-quantum-blue to-quantum-purple bg-clip-text text-transparent">View Schedule</span>
+                    <span className="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-30 transition-opacity"></span>
                   </Button>
                 </Link>
               </div>
@@ -213,7 +231,7 @@ const Home = () => {
             </h2>
             <p className="text-lg text-muted-foreground leading-relaxed">
               Qiskit Fall Fest is a global student-run series of quantum
-              computing events supported by IBM Quantum. IIIT-AP's edition
+              computing events supported by IBM Quantum. RGUKT Srikakulam's edition
               brings hands-on workshops, guided Jupyter notebooks, and a campus
               hackathon to help students build practical Qiskit skills.
             </p>
@@ -287,10 +305,11 @@ const Home = () => {
                 <Link to="/register">
                   <Button
                     size="lg"
-                    className=" text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg"
+                    className="btn-quantum text-primary-foreground px-8 py-4 text-lg font-semibold rounded-lg shadow-lg relative group animate-pulse-glow"
                   >
-                    Secure Your Spot
-                    <ArrowRight className="ml-2 h-5 w-5" />
+                    <span className="relative z-10">Secure Your Spot</span>
+                    <ArrowRight className="ml-2 h-5 w-5 relative z-10 group-hover:translate-x-1 transition-transform" />
+                    <span className="absolute inset-0 bg-white/10 rounded-lg opacity-0 group-hover:opacity-20 transition-opacity"></span>
                   </Button>
                 </Link>
               )}

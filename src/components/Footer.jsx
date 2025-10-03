@@ -100,7 +100,7 @@ const Footer = () => {
                     Qiskit Fall Fest 2025
                   </h3>
                   <p className="text-sm text-muted-foreground -mt-1">
-                    Rgukt Srikakulam
+                    RGUKT Srikakulam
                   </p>
                 </div>
               </Link>
